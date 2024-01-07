@@ -60,6 +60,7 @@ public class ProductsArray {
         //System.out.println(Arrays.toString(products));
         for(String product: products){
             System.out.print(product + " ");
+            System.out.println();
         }
     }
 }
