@@ -1,4 +1,5 @@
-/*1.Abre tu Proyecto Integrador en IntelliJ Idea
+/*https://learn.ada-school.org/courses/63acef63f53e8a9a14f0fe81/cohorts/652e86a7583f80a7181f881c/sessions/6426493172dd2249f693ae87/content?moduleId=63ae4653bf1fbbcc6a9cd98c
+1.Abre tu Proyecto Integrador en IntelliJ Idea
   2.Crea un nuevo paquete llamado model.
   3.Crea una nueva clase llamada Product:
   4.Implementa 4 nuevas funciones o métodos en la clase Product para:
