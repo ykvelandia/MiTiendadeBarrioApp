@@ -57,7 +57,6 @@ public class ProductsArray {
     public static void alphabeticOrder(String[] productsList){
         Arrays.sort(products);
         System.out.println("\nNombres de productos en orden alfabético");
-        //System.out.println(Arrays.toString(products));
         for(String product: products){
             System.out.print(product + " ");
             System.out.println();
