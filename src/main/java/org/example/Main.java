@@ -6,14 +6,19 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+
         System.out.println(" ¡Bienvenid@ a Mi Tienda App!");
+        ProductsArray productsArray = new ProductsArray();
+        productsArray.alphabeticOrder(productsArray.products);
         Main main = new Main();
         main.runMenu();
+
     }
 
     //Crea una función o método que te permita mostrar las opciones del menu:
     private void displayMenu() {
 
+        System.out.println();
         System.out.println(
                 """
                         |o|                         /////////////\\\\\\
@@ -28,7 +33,7 @@ public class Main {
         System.out.println("±----------------------------------------±");
         System.out.println("|   Administrador Mi Tienda de Barrio    |");
         System.out.println("±----------------------------------------±");
-        System.out.println("---Ingrese una opcion de las siguientes: ---");
+        System.out.println("---Ingrese una opcion de las siguientes:--");
         System.out.println("±----------------------------------------±");
         System.out.println("1. Agregar producto                      |");
         System.out.println("2. Eliminar producto                     |");
@@ -39,6 +44,7 @@ public class Main {
         System.out.println("7. Salir                                 |");
         System.out.println("±----------------------------------------±");
         System.out.print("   Ingresa tu opción:    (1 - 7)  ");
+
     }
 
     //Menu Opciones de App Mi Tienda de Barrio
@@ -50,7 +56,7 @@ public class Main {
             case 3 -> UpdateProduct.updateProduct();
             case 4 -> ProductsArray.showProducts();
             case 5 -> Inventario.verInventario();
-            case 6 -> ProductsArray.alphabeticOrder();
+            case 6 -> ProductsArray.alphabeticOrder(ProductsArray.products);
             case 7 -> System.out.println("Saliendo...");
             default -> System.out.println("Opción invalida. Por favor intenta de nuevo.");
         }
