@@ -26,6 +26,28 @@ public class Product {
         this.stock = stock;
     }
 
+    //-Determinar si tu producto se quedo sin inventario.
+    public void avaliableStock(){
+        if(stock <= 0){
+            System.out.println("El producto no se encuentra en Stock.");
+        } else {
+            System.out.println("Hay " + stock + " item(s) en stock");
+        }
+    }
+    // -Determinar si el precio de un producto es mayor a un valor pasado por parametro.
+    public boolean higherPrice (double comparePrice){
+        return  price > comparePrice;
+    }
+
+    //-Determinar si el precio de un producto es menor o igual a un valor pasado por parametro.
+    public boolean lowerPrice (double comparePrice){
+        return  price <= comparePrice;
+    }
+
+    //-Determinar si el nombre del producto contiene una palabra pasada por parametro.
+    public boolean containsWords(String words) {
+        return this.name.toLowerCase().contains(words.toLowerCase());
+    }
     public String getName() {
         return name;
     }
