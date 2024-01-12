@@ -8,10 +8,29 @@ public class Main {
     public static void main(String[] args) {
 
         System.out.println(" ¡Bienvenid@ a Mi Tienda App!");
-        ProductsArray productsArray = new ProductsArray();
-        productsArray.alphabeticOrder(productsArray.products);
+
         Main main = new Main();
         main.runMenu();
+
+        //Instancia la clase creada ProductsArray en tu método main
+        ProductsArray productsArray = new ProductsArray();
+        productsArray.alphabeticOrder(productsArray.products);
+
+        //Instancia de la clase Product en el Main y veritfica cada una de las funciones implementadas
+        System.out.println();
+        Product product = new Product("Arroz diana",2900,1,"01");
+        System.out.println("Producto:" + product.getName());
+        product.avaliableStock();
+        product.higherPrice(2000);
+        product.lowerPrice(80);
+        product.containsWords("Prod");
+
+        AddProduct addProduct = new AddProduct();
+
+        // Llamada al método para agregar un producto
+        addProduct.addProduct();
+
+
 
     }
 

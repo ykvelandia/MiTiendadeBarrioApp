@@ -19,13 +19,38 @@ public class Product {
     private String name;
     private double price;
     private int stock;
+    private String id;
 
-    public Product(String name, double price, int stock) {
+
+    public Product(String name, double price, int stock,String id) {
         this.name = name;
         this.price = price;
         this.stock = stock;
+        this.id = id;
     }
 
+    //-Determinar si tu producto se quedo sin inventario.
+    public void avaliableStock(){
+        if(stock <= 0){
+            System.out.println("El producto no se encuentra en Stock.");
+        } else {
+            System.out.println("Hay " + stock + " item(s) en stock");
+        }
+    }
+    // -Determinar si el precio de un producto es mayor a un valor pasado por parametro.
+    public boolean higherPrice (double comparePrice){
+        return  price > comparePrice;
+    }
+
+    //-Determinar si el precio de un producto es menor o igual a un valor pasado por parametro.
+    public boolean lowerPrice (double comparePrice){
+        return  price <= comparePrice;
+    }
+
+    //-Determinar si el nombre del producto contiene una palabra pasada por parametro.
+    public boolean containsWords(String words) {
+        return this.name.toLowerCase().contains(words.toLowerCase());
+    }
     public String getName() {
         return name;
     }
@@ -50,9 +75,17 @@ public class Product {
         this.stock = stock;
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     @Override
     public String toString() {
-        return "{ 'name':" + name + ", price:" + price + ", stock:" + stock + "}";
+        return "{ 'name':" + name + ", price:" + price + ", stock:" + stock + ", 'id' :"+id+"}";
     }
 }
 
