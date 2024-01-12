@@ -19,11 +19,14 @@ public class Product {
     private String name;
     private double price;
     private int stock;
+    private String id;
 
-    public Product(String name, double price, int stock) {
+
+    public Product(String name, double price, int stock,String id) {
         this.name = name;
         this.price = price;
         this.stock = stock;
+        this.id = id;
     }
 
     //-Determinar si tu producto se quedo sin inventario.
@@ -72,9 +75,17 @@ public class Product {
         this.stock = stock;
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     @Override
     public String toString() {
-        return "{ 'name':" + name + ", price:" + price + ", stock:" + stock + "}";
+        return "{ 'name':" + name + ", price:" + price + ", stock:" + stock + ", 'id' :"+id+"}";
     }
 }
 
