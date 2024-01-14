@@ -4,14 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class AddProduct {
+public class Inventario {
     private static List<Product> productsList = new ArrayList<>();
 
-
-    public AddProduct() {
-       // this.productsList = new ArrayList<>();
-    }
-    public static void addProduct(){
+    public static void addProduct() {
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Ingrese el nombre del producto: ");
@@ -27,9 +23,12 @@ public class AddProduct {
         System.out.print("Ingrese el id del producto: ");
         String id = scanner.nextLine();
 
-        Product newProduct = new Product(name, price, stock,id);
+        Product newProduct = new Product(name, price, stock, id);
         productsList.add(newProduct);
         System.out.println("Producto agregado exitosamente.");
+    }
+    public static void viewStock(){
+
         for (Product product:productsList) {
             System.out.println(product.toString());
 
