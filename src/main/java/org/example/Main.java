@@ -25,10 +25,10 @@ public class Main {
         product.lowerPrice(80);
         product.containsWords("Prod");
 
-        AddProduct addProduct = new AddProduct();
+        Inventario inventario = new Inventario();
 
         // Llamada al método para agregar un producto
-        addProduct.addProduct();
+        inventario.addProduct();
 
 
 
@@ -70,11 +70,11 @@ public class Main {
     private  void handleUserChoice(int choice) {
 
         switch (choice) {
-            case 1 -> AddProduct.addProduct();
+            case 1 -> Inventario.addProduct();
             case 2 -> RemoveProduct.removeProduct();
             case 3 -> UpdateProduct.updateProduct();
             case 4 -> ProductsArray.showProducts();
-            case 5 -> Inventario.verInventario();
+            case 5 -> Inventario.viewStock();
             case 6 -> ProductsArray.alphabeticOrder(ProductsArray.products);
             case 7 -> System.out.println("Saliendo...");
             default -> System.out.println("Opción invalida. Por favor intenta de nuevo.");
