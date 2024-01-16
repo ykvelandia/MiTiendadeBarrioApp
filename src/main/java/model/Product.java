@@ -17,12 +17,13 @@ package model;
 
 public class Product {
     private String name;
+    private String description;
+    private String category;
+    private String tags;
     private double price;
     private int stock;
     private String id;
-
-
-    public Product(String name, double price, int stock,String id) {
+    public Product(String name, double price, int stock, String id) {
         this.name = name;
         this.price = price;
         this.stock = stock;
