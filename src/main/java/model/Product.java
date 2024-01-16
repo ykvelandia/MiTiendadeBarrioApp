@@ -21,6 +21,12 @@ public class Product {
     private int stock;
     private String id;
 
+    public Product(String name, double price, int stock, String id) {
+        this.name = name;
+        this.price = price;
+        this.stock = stock;
+        this.id = id;
+    }
 
     //-Determinar si tu producto se quedo sin inventario.
     public void avaliableStock(){
