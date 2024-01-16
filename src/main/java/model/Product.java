@@ -21,10 +21,15 @@ public class Product {
     private int stock;
     private String id;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> b3321ca0c040075a98a563cbd0fcae3c6a602405
     public Product(String name, double price, int stock,String id) {
         this.name = name;
         this.price = price;
         this.stock = stock;
+        this.id = id;
     }
 
     //-Determinar si tu producto se quedo sin inventario.
@@ -83,7 +88,11 @@ public class Product {
 
     @Override
     public String toString() {
+<<<<<<< HEAD
         return "{ 'name':" + name + ", price:" + price + ", stock:" + stock +",id:" + id+ "}";
+=======
+        return "{ 'name':" + name + ", price:" + price + ", stock:" + stock + ", 'id' :"+id+"}";
+>>>>>>> b3321ca0c040075a98a563cbd0fcae3c6a602405
     }
 }
 

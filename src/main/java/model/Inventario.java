@@ -7,34 +7,38 @@ import java.util.Scanner;
 public class Inventario {
     private static List<Product> productsList = new ArrayList<>();
 
-
-    public static void addProduct(){
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.print("Ingrese el nombre del producto: ");
-        String name = scanner.nextLine();
-
-        System.out.print("Ingrese el precio del producto: ");
-        double price = scanner.nextDouble();
-
-        System.out.print("Ingrese el stock del producto: ");
-        int stock = scanner.nextInt();
-        scanner.nextLine();
-
-        System.out.print("Ingrese el id del producto: ");
-        String id = scanner.nextLine();
-
-        Product newProduct = new Product(name, price, stock,id);
-        productsList.add(newProduct);
-        System.out.println("Producto agregado exitosamente.");
-    }
-    public static void viewStock(){
-        for (Product product:productsList) {
-            System.out.println(product.toString());
+        public Inventario() {
+            // this.productsList = new ArrayList<>();
         }
-    }
 
-    public List<Product> getProductsList() {
-        return productsList;
+        public static void addProduct() {
+            Scanner scanner = new Scanner(System.in);
+
+            System.out.print("Ingrese el nombre del producto: ");
+            String name = scanner.nextLine();
+
+            System.out.print("Ingrese el precio del producto: ");
+            double price = scanner.nextDouble();
+
+            System.out.print("Ingrese el stock del producto: ");
+            int stock = scanner.nextInt();
+            scanner.nextLine();
+
+            System.out.print("Ingrese el id del producto: ");
+            String id = scanner.nextLine();
+
+            Product newProduct = new Product(name, price, stock, id);
+            productsList.add(newProduct);
+            System.out.println("Producto agregado exitosamente.");
+        }
+        public static void viewStock(){
+            for (Product product:productsList) {
+                System.out.println(product.toString());
+            }
+        }
+        public List<Product> getProductsList() {
+            return productsList;
+        }
+
+
     }
-}

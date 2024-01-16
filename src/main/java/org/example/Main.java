@@ -25,6 +25,7 @@ public class Main {
         product.lowerPrice(80);
         product.containsWords("Prod");
 
+
         Inventario addProduct = new Inventario();
         // Llamada al método para agregar un producto
         addProduct.addProduct();
