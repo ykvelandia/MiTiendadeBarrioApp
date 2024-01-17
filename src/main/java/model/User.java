@@ -10,7 +10,7 @@ public class User {
         ADMIN,SELLER,GUEST
     }
 
-    public User(String usermane, String password, String email) {
+    public User(String usermane, String password, String email,UserRole role) {
         this.usermane = usermane;
         this.password = password;
         this.email = email;
