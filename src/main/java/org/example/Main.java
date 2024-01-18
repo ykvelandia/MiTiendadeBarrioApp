@@ -9,18 +9,18 @@ public class Main {
 
         System.out.println(" ¡Bienvenid@ a Mi Tienda App!");
 
-        //Main main = new Main();
-        //main.runMenu();
+        Main main = new Main();
+        main.runMenu();
 
         //Usando tipos comunes : Enum
         User user = new User("Yeka","Password","ykvelandia@gmail.com", User.UserRole.ADMIN);
         System.out.println("Rol: "+user.getRole());
 
         //Instancia la clase creada ProductsArray en tu método main
-       //ProductsArray productsArray = new ProductsArray();
-        //productsArray.alphabeticOrder(productsArray.products);
+        ProductsArray productsArray = new ProductsArray();
+        productsArray.alphabeticOrder(productsArray.products);
 
-        /*Instancia de la clase Product en el Main y veritfica cada una de las funciones implementadas
+        //Instancia de la clase Product en el Main y veritfica cada una de las funciones implementadas
         System.out.println();
         Product product = new Product("Arroz diana",2900,1,"01");
         System.out.println("Producto:" + product.getName());
@@ -28,11 +28,11 @@ public class Main {
         product.higherPrice(2000);
         product.lowerPrice(80);
         product.containsWords("Prod");
-*/
 
-        //Inventario addProduct = new Inventario();
-        // Llamada al método para agregar un producto
-        //addProduct.addProduct();
+
+        Inventario addProduct = new Inventario();
+         //Llamada al método para agregar un producto
+        addProduct.addProduct();
     }
 
     //Crea una función o método que te permita mostrar las opciones del menu:
