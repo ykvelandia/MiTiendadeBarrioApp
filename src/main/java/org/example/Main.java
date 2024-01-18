@@ -2,12 +2,40 @@ package org.example;
 
 import model.*;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 
         System.out.println(" ¡Bienvenid@ a Mi Tienda App!");
+        System.out.println();
+
+        ProductServiceI productServiceI = new ProductServiceArrayList();
+        //Agregamos 2 productos
+        Product product1 = new Product("Leche Entera Alpina",3100,20,"1");
+        productServiceI.addProduct(product1);
+        Product product2 = new Product("Yogurt Alpina Finesse Melocoton",10700,10,"2");
+        productServiceI.addProduct(product2);
+        System.out.println();
+        //Obtenemos todos los productos
+        List<Product> allProducts = productServiceI.getAllProducts();
+        System.out.println("Todos los productos: ");
+        allProducts.forEach(product -> System.out.println(product.getName()));
+        System.out.println();
+        //Encontrar por id
+        String productIdToFind ="1";
+        Product foundProduct = productServiceI.findById(productIdToFind);
+        if (foundProduct == null){
+            System.out.println("Producto encontrado " + productIdToFind + ":" + foundProduct.getName());
+        }else {
+            System.out.println("Producto no encontrado " + productIdToFind + ":" + foundProduct.getName());
+        }
+        System.out.println();
+        //Eliminar por id
+        String idToDelete ="2";
+        productServiceI.deleteProduct(idToDelete);
+        System.out.println();
 
         Main main = new Main();
         main.runMenu();
@@ -29,8 +57,6 @@ public class Main {
 
         // Llamada al método para agregar un producto
         inventario.addProduct();
-
-
 
     }
 
