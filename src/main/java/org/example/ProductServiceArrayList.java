@@ -1,10 +1,16 @@
 package org.example;
 
+import com.opencsv.CSVReader;
+import com.opencsv.exceptions.CsvValidationException;
 import model.Product;
 
-import java.sql.SQLOutput;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class ProductServiceArrayList implements ProductServiceI{
     private List<Product> productList;
@@ -35,6 +41,23 @@ public class ProductServiceArrayList implements ProductServiceI{
     @Override
     public List<Product> getAllProducts() {
         return new ArrayList<>(productList);
+    }
+
+    public void loadInventory(String csvFilePath){
+        try {
+            File file = new File("resources/inventory.csv");
+            Scanner fileScanner = new Scanner(file);
+            fileScanner.nextLine();
+            while (fileScanner.hasNextLine()) {
+                String line = fileScanner.nextLine();
+                String[] productInfo = line.split(",");
+                System.out.println(productInfo[0]);
+                System.out.println(line);
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
     }
 
 }

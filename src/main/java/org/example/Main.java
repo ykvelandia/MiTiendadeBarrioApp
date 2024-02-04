@@ -11,6 +11,9 @@ public class Main {
         System.out.println(" ¡Bienvenid@ a Mi Tienda App!");
         System.out.println();
 
+        ProductServiceArrayList productService  = new ProductServiceArrayList();
+        productService.loadInventory("inventory.csv");
+
         ProductServiceI productServiceI = new ProductServiceArrayList();
         //Agregamos 2 productos
         Product product1 = new Product("Leche Entera Alpina",3100,20,"1");
