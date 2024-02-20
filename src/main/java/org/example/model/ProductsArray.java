@@ -9,7 +9,7 @@
  -Implementa una función que imprima la lista de productos en orden alfabético.
  Instancia la clase creada ProductsArray en tu método main y prueba que funcione.
  Sube los cambios a tu repositorio y comparte el enalce:*/
-package model;
+package org.example.model;
 import java.util.Arrays;
 import java.util.Scanner;
 

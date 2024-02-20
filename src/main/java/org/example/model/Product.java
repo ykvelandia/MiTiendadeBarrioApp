@@ -12,7 +12,7 @@
     6.Has commit de tus cambios y subelos a tu repositorio remoto.
     7.Envía el enlace con tu solución.*/
 
-package model;
+package org.example.model;
 
 
 public class Product {

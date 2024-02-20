@@ -1,6 +1,6 @@
 package org.example;
 
-import model.*;
+import org.example.model.*;
 
 import java.util.List;
 import java.util.Scanner;
