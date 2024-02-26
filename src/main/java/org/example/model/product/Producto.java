@@ -1,9 +1,16 @@
-package org.example.model.dto.product;
+package org.example.model.product;
 
-import lombok.Data;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Data
-public class ProductResponseDto {
+import java.io.Serializable;
+
+@Document(collection = "product")
+public class Producto implements Serializable {
+    private static long serialVersionUID= 1L;
+    @Id
+
+    private String idProduct;
     private String name;
     private String description;
     private String category;
@@ -11,13 +18,28 @@ public class ProductResponseDto {
     private double price;
     private String UrlFoto;
 
-    public ProductResponseDto(String name, String description, String category, String tags, double price, String urlFoto) {
+    public Producto() {
+    }
+
+    public Producto(String name, String description, String category, String tags, double price, String urlFoto) {
         this.name = name;
         this.description = description;
         this.category = category;
         this.tags = tags;
         this.price = price;
         UrlFoto = urlFoto;
+    }
+
+    public Producto(String name, String description, String category, String tags, double price, int stock) {
+        this.name = name;
+        this.description = description;
+        this.category = category;
+        this.tags = tags;
+        this.price = price;
+    }
+
+    public String getIdProduct() {
+        return idProduct;
     }
 
     public String getName() {
