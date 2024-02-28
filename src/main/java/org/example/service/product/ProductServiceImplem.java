@@ -4,7 +4,6 @@ import org.example.model.dto.product.ProductDto;
 import org.example.model.dto.product.ProductMapper;
 import org.example.model.dto.product.ProductResponseDto;
 import org.example.model.product.Producto;
-import org.example.repository.product.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

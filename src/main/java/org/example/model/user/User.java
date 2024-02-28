@@ -5,6 +5,10 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 @Document(collection = "users")
 public class User implements Serializable {
     private static final long serialVersionUID = 1L;
@@ -15,6 +19,7 @@ public class User implements Serializable {
     private String lastName;
     private String email;
     private String password;
+    private List<RoleEnum> roles;
 
 
     public User(String name, String lastName, String email, String password) {
@@ -23,6 +28,7 @@ public class User implements Serializable {
         this.lastName = lastName;
         this.email = email;
         this.password = password;
+        this.roles = new ArrayList<>(Collections.singleton(RoleEnum.USER));
     }
 
 
@@ -65,4 +71,22 @@ public class User implements Serializable {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public List<RoleEnum> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<RoleEnum> roles) {
+        this.roles = roles;
+    }
+
+    public void addRole(RoleEnum role) {
+        if (!roles.contains(role)) {
+            roles.add(role);
+        }
+    }
+    public void updateUser(User user){
+        setName(user.getName());
+        setLastName(user.getLastName());
+            }
 }

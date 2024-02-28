@@ -4,6 +4,7 @@ package org.example.service.user;
 import org.example.model.dto.user.UserDto;
 import org.example.model.dto.user.UserMapper;
 import org.example.model.dto.user.UserResponseDto;
+import org.example.model.user.User;
 import org.example.repository.user.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,6 +27,15 @@ public class UserServiceImplem implements UserService{
     @Override
     public UserResponseDto findUserById(String id) {
         return UserMapper.user_To_UserResponseDto(userRepository.findUserById(id));
+    }
+
+    @Override
+    public User findByEmail(String email) {
+        User userFound = userRepository.findByEmail(email).get();
+        if (userFound != null){
+            return userFound;
+        }
+        return null;
     }
 
     @Override
