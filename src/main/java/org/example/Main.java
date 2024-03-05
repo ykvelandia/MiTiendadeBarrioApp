@@ -1,6 +1,7 @@
 package org.example;
 
 import org.example.model.*;
+import org.example.model.product.Producto;
 
 import java.util.List;
 import java.util.Scanner;
@@ -14,47 +15,12 @@ public class Main {
         ProductServiceArrayList productService  = new ProductServiceArrayList();
         productService.loadInventory("inventory.csv");
 
-        ProductServiceI productServiceI = new ProductServiceArrayList();
-        //Agregamos 2 productos
-        Product product1 = new Product("Leche Entera Alpina",3100,20,"1");
-        productServiceI.addProduct(product1);
-        Product product2 = new Product("Yogurt Alpina Finesse Melocoton",10700,10,"2");
-        productServiceI.addProduct(product2);
-        System.out.println();
-        //Obtenemos todos los productos
-        List<Product> allProducts = productServiceI.getAllProducts();
-        System.out.println("Todos los productos: ");
-        allProducts.forEach(product -> System.out.println(product.getName()));
-        System.out.println();
-        //Encontrar por id
-        String productIdToFind ="1";
-        Product foundProduct = productServiceI.findById(productIdToFind);
-        if (foundProduct == null){
-            System.out.println("Producto encontrado " + productIdToFind + ":" + foundProduct.getName());
-        }else {
-            System.out.println("Producto no encontrado " + productIdToFind + ":" + foundProduct.getName());
-        }
-        System.out.println();
-        //Eliminar por id
-        String idToDelete ="2";
-        productServiceI.deleteProduct(idToDelete);
-        System.out.println();
-
         Main main = new Main();
         main.runMenu();
 
         //Instancia la clase creada ProductsArray en tu método main
         ProductsArray productsArray = new ProductsArray();
         productsArray.alphabeticOrder(productsArray.products);
-
-        //Instancia de la clase Product en el Main y veritfica cada una de las funciones implementadas
-        System.out.println();
-        Product product = new Product("Arroz diana",2900,1,"01");
-        System.out.println("Producto:" + product.getName());
-        product.avaliableStock();
-        product.higherPrice(2000);
-        product.lowerPrice(80);
-        product.containsWords("Prod");
 
         Inventario inventario = new Inventario();
 

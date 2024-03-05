@@ -1,11 +1,13 @@
 package org.example.model;
 
+import org.example.model.product.Producto;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Inventario {
-    private static List<Product> productsList = new ArrayList<>();
+    private static List<Producto> productsList = new ArrayList<>();
 
     public static void addProduct() {
         Scanner scanner = new Scanner(System.in);
@@ -23,19 +25,17 @@ public class Inventario {
         System.out.print("Ingrese el id del producto: ");
         String id = scanner.nextLine();
 
-        Product newProduct = new Product(name, price, stock, id);
-        productsList.add(newProduct);
-        System.out.println("Producto agregado exitosamente.");
+
     }
     public static void viewStock(){
 
-        for (Product product:productsList) {
+        for (Producto product:productsList) {
             System.out.println(product.toString());
 
         }
     }
 
-    public List<Product> getProductsList() {
+    public List<Producto> getProductsList() {
         return productsList;
 
     }

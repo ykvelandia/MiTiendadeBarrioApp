@@ -1,6 +1,6 @@
 package org.example;
 
-import org.example.model.Product;
+import org.example.model.product.Producto;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -9,33 +9,33 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ProductServiceArrayList implements ProductServiceI{
-    private List<Product> productList;
+    private List<Producto> productList;
 
     public ProductServiceArrayList() {
         this.productList = new ArrayList<>();
     }
     @Override
-    public void addProduct(Product product) {
+    public void addProduct(Producto product) {
         productList.add(product);
         System.out.println("Se ha agregado un producto " + product.getName());
 
     }
     @Override
     public void deleteProduct(String productId) {
-        productList.removeIf(product -> product.getId().equals(productId));
+        productList.removeIf(product -> product.getIdProduct().equals(productId));
         System.out.println("Producto eliminado con id: " +productId);
 
     }
     @Override
-    public Product findById(String productId) {
+    public Producto findById(String productId) {
         return productList.stream()
-                .filter((product -> product.getId().equals(productId)))
+                .filter((product -> product.getIdProduct().equals(productId)))
                 .findFirst()
                 .orElse(null);
     }
 
     @Override
-    public List<Product> getAllProducts() {
+    public List<Producto> getAllProducts() {
         return new ArrayList<>(productList);
     }
 
