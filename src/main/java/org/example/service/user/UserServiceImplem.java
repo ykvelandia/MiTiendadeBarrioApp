@@ -1,21 +1,24 @@
 package org.example.service.user;
 
-
-import org.example.model.dto.user.UserDto;
-import org.example.model.dto.user.UserMapper;
-import org.example.model.dto.user.UserResponseDto;
+import org.example.dto.user.UserDto;
+import org.example.dto.user.UserMapper;
+import org.example.dto.user.UserResponseDto;
+import org.example.model.user.RolesEnum;
+import org.example.model.user.User;
 import org.example.repository.user.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserServiceImplem implements UserService{
-
     @Autowired
     private UserRepository userRepository;
+
     @Override
     public List<UserResponseDto> getAllUsers() {
         List<UserResponseDto> userResponseDtos = new ArrayList<>();
@@ -24,8 +27,31 @@ public class UserServiceImplem implements UserService{
     }
 
     @Override
-    public UserResponseDto findUserById(String id) {
-        return UserMapper.user_To_UserResponseDto(userRepository.findUserById(id));
+    public Optional<UserResponseDto> findUserById(String id) {
+        UserResponseDto user = UserMapper.user_To_UserResponseDto(userRepository.findUserById(id));
+        return Optional.ofNullable(user);
+    }
+
+    @Override
+    public User findByEmail(String email) {
+        User userFound = userRepository.findByEmail(email).get();
+        if (userFound != null){
+            return userFound;
+        }else {
+            return null;
+        }
+    }
+
+    @Override
+    public UserResponseDto createUser(UserDto userDto) {
+        return UserMapper.user_To_UserResponseDto(userRepository.createUser(UserMapper.userDto_To_User(userDto)));
+    }
+
+    @Override
+    public UserResponseDto createUserAdmin(UserDto userDto) {
+        User userAdmin = UserMapper.userDto_To_User(userDto);
+        userAdmin.addRole(RolesEnum.ADMIN);
+        return UserMapper.user_To_UserResponseDto(userRepository.createUser(userAdmin));
     }
 
     @Override
