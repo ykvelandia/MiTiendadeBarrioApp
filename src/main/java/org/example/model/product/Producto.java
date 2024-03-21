@@ -1,16 +1,17 @@
 package org.example.model.product;
 
+import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.io.Serializable;
 
 @Document(collection = "product")
+@Data
 public class Producto implements Serializable {
     private static long serialVersionUID= 1L;
     @Id
-
-    private String idProduct;
+    private String id;
     private String name;
     private String description;
     private String category;
@@ -30,16 +31,18 @@ public class Producto implements Serializable {
         UrlFoto = urlFoto;
     }
 
-    public Producto(String name, String description, String category, String tags, double price, int stock) {
+    public Producto(String id,String name, String description, String category, String tags, double price, int stock) {
+        this.id = id;
         this.name = name;
         this.description = description;
         this.category = category;
         this.tags = tags;
         this.price = price;
+        this.UrlFoto = UrlFoto;
     }
 
-    public String getIdProduct() {
-        return idProduct;
+    public String getId() {
+        return id;
     }
 
     public String getName() {
