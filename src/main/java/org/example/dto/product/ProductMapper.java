@@ -1,4 +1,4 @@
-package org.example.model.dto.product;
+package org.example.dto.product;
 
 import org.example.model.product.Producto;
 
@@ -9,6 +9,7 @@ public class ProductMapper {
         }
 
         return new ProductResponseDto(
+                producto.getId(),
                 producto.getName(),
                 producto.getDescription(),
                 producto.getCategory(),
@@ -21,13 +22,13 @@ public class ProductMapper {
 
     public static Producto ProductDto_To_Product (ProductDto productDto){
 
-        double precio = (productDto.getPrice() == 0) ? 0.0 : productDto.getPrice();
+        double price= (productDto.getPrice() == 0) ? 0.0 : productDto.getPrice();
         return new Producto(
                 productDto.getName(),
                 productDto.getDescription(),
                 productDto.getCategory(),
                 productDto.getTags(),
-                productDto.getPrice(),
+                price,
                 productDto.getUrlFoto()
         );
     }

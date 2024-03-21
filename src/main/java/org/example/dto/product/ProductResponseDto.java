@@ -1,9 +1,10 @@
-package org.example.model.dto.product;
+package org.example.dto.product;
 
 import lombok.Data;
 
 @Data
 public class ProductResponseDto {
+    private String id;
     private String name;
     private String description;
     private String category;
@@ -11,7 +12,8 @@ public class ProductResponseDto {
     private double price;
     private String UrlFoto;
 
-    public ProductResponseDto(String name, String description, String category, String tags, double price, String urlFoto) {
+    public ProductResponseDto(String id,String name, String description, String category, String tags, double price, String urlFoto) {
+        this.id = id;
         this.name = name;
         this.description = description;
         this.category = category;

@@ -1,5 +1,8 @@
-package org.example.model.dto.product;
+package org.example.dto.product;
 
+import lombok.Data;
+
+@Data
 public class ProductDto {
     private String name;
     private String description;

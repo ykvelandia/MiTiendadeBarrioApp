@@ -1,5 +1,7 @@
-package org.example.model.dto.user;
+package org.example.dto.user;
 
+import lombok.Data;
+@Data
 public class UserDto {
     private String name;
     private String lastName;
