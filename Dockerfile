@@ -16,11 +16,13 @@ FROM openjdk:17-jdk-slim
 # Establece el directorio de trabajo
 WORKDIR /app
 
+
 # Copia el archivo JAR de tu aplicación al directorio de trabajo
-COPY target/miTiendaDeBarrioApp-1.0-SNAPSHOT.jar app.jar
+COPY target/miTiendaDeBarrioApp-1.0-SNAPSHOT.jar.original /app/miTiendaDeBarrioApp.jar
 
 # Exponer el puerto que utilizará la aplicación
 EXPOSE 8081
 
 # Define el comando de inicio de la aplicación
-CMD ["java", "-jar", "app.jar"]
+CMD ["java", "-jar", "miTiendaDeBarrioApp.jar"]
+
