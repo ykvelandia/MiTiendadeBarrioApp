@@ -1,4 +1,4 @@
-# Created at 2024-03-25T14:59:08.411
+# Created at 2024-03-25T15:21:50.442
 Boot Manifest-JAR contains absolute paths in classpath 'D:\adaSchool\java\miTiendaDeBarrioApp\target\test-classes'
 Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
 'other' has different root
