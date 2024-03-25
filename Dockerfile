@@ -17,8 +17,8 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 
 # Copia el archivo JAR de tu aplicación al directorio de trabajo
-COPY target/miTiendaDeBarrioApp-1.0-SNAPSHOT.jar app.jar
+COPY target/miTiendaDeBarrioApp-1.0-SNAPSHOT.jar /app/miTiendaDeBarrioApp.jar
 
 # Exponer el puerto que utilizará la aplicación
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-jar", "miTiendaDeBarrioApp.jar"]
 
