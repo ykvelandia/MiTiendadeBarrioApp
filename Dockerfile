@@ -17,7 +17,7 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 
 # Copia el archivo JAR de tu aplicación al directorio de trabajo
-COPY target/miTiendaDeBarrioApp-1.0-SNAPSHOT.jar.original /app/miTiendaDeBarrioApp.jar
+COPY target/miTiendaDeBarrioApp-1.0-SNAPSHOT.jar /app/miTiendaDeBarrioApp.jar
 
 # Define el comando de inicio de la aplicación
 CMD ["java", "-jar", "miTiendaDeBarrioApp.jar"]
