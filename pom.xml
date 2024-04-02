@@ -73,17 +73,20 @@
             <artifactId>spring-boot-maven-plugin</artifactId>
             <version>3.2.4</version>
         </dependency>
-
-
     </dependencies>
-
     <build>
         <plugins>
-            <!-- Plugin para construir el archivo JAR y configurar la clase principal en el manifiesto -->
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>3.2.0</version>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </exclude>
+                    </excludes>
+                </configuration>
             </plugin>
         </plugins>
     </build>
